@@ -1,0 +1,139 @@
+@import 'colors';
+
+@mixin category-background-color {
+  &.biologi {
+    background-color: $biologi;
+  }
+  
+  &.kemi {
+    background-color: $kemi;
+  }
+  
+  &.halsa-medicin {
+    background-color: $halsa-medicin;
+  }
+  
+  &.teknik {
+    background-color: $teknik;
+  }
+  
+  &.miljo {
+    background-color: $miljo;
+  }
+  
+  &.rymden {
+    background-color: $rymden;
+  }
+  
+  &.djur-natur {
+    background-color: $djur-natur;
+  }
+  
+  &.manniskan {
+    background-color: $manniskan;
+  }
+  
+  &.arkeologi {
+    background-color: $arkeologi;
+  }
+
+  &.rymden {
+    background-color: $rymden;
+  }
+
+  &.fysik {
+    background-color: $fysik;
+  }
+}
+
+@mixin category-border-color {
+  &.biologi {
+    border-color: $biologi;
+  }
+  
+  &.kemi {
+    border-color: $kemi;
+  }
+  
+  &.halsa-medicin {
+    border-color: $halsa-medicin;
+  }
+  
+  &.teknik {
+    border-color: $teknik;
+  }
+  
+  &.miljo {
+    border-color: $miljo;
+  }
+  
+  &.rymden {
+    border-color: $rymden;
+  }
+  
+  &.djur-natur {
+    border-color: $djur-natur;
+  }
+  
+  &.manniskan {
+    border-color: $manniskan;
+  }
+  
+  &.arkeologi {
+    border-color: $arkeologi;
+  }
+
+  &.rymden {
+    border-color: $rymden;
+  }
+
+  &.fysik {
+    border-color: $fysik;
+  }
+}
+
+@mixin category-color {
+  &.biologi {
+    color: $biologi;
+  }
+  
+  &.kemi {
+    color: $kemi;
+  }
+  
+  &.halsa-medicin {
+    color: $halsa-medicin;
+  }
+  
+  &.teknik {
+    color: $teknik;
+  }
+  
+  &.miljo {
+    color: $miljo;
+  }
+  
+  &.rymden {
+    color: $rymden;
+  }
+  
+  &.djur-natur {
+    color: $djur-natur;
+  }
+  
+  &.manniskan {
+    color: $manniskan;
+  }
+  
+  &.arkeologi {
+    color: $arkeologi;
+  }
+
+  &.rymden {
+    color: $rymden;
+  }
+
+  &.fysik {
+    color: $fysik;
+  }
+}

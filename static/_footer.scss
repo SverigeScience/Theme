@@ -1,0 +1,19 @@
+.main-footer {
+	background-color: $main-blue;
+	padding: 2rem;
+	font-size: .8rem;
+	color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	a {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.content {
+		flex:1;
+	}
+}

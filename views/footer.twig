@@ -1,0 +1,13 @@
+<footer class="main-footer">
+  <div class="content">
+    <p>Copyright &copy; <a href="http://vufuzi.se">Vufuzi</a> 2015</p>
+    <p>Alla rättigheter reserverade. </p>
+  </div>
+  <aside class="sidebar">
+    <nav>
+      {% for item in menu.get_items %}
+        <a class="{{item.classes | join(' ')}}" href="{{item.get_link}}">{{item.title}}</a>
+      {% endfor %}
+    </nav>
+  </aside>
+</footer>

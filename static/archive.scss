@@ -1,0 +1,28 @@
+@import 'colors';
+@import 'categories';
+
+.category-page {
+  background-color: $secondary-blue;
+  @include category-background-color;
+  h1 {
+    color: $white;
+    font-weight: 100;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}
+
+.empty-space {
+  color: $title-color;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 3rem auto;
+}
+
+.post {
+  h2 {
+    margin-top: 1.2rem;
+  }
+}

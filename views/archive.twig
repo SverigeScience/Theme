@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html {{site.language_attributes}}>
+  <head>
+    {% include 'html-header.twig' %}
+
+    <link rel="stylesheet" type="text/css" href="{{theme.link}}/static/index.css">
+    <style>.category-page{background-color:#236f9d}.category-page.biologi{background-color:#ffc107}.category-page.kemi{background-color:#ff5722}.category-page.halsa-medicin{background-color:#673fb4}.category-page.teknik{background-color:#9c27b0}.category-page.miljo{background-color:#8bc34a}.category-page.rymden{background-color:#3f51b5}.category-page.djur-natur{background-color:#50ae54}.category-page.manniskan{background-color:#795548}.category-page.arkeologi{background-color:#ed6c1e}.category-page.rymden{background-color:#3f51b5}.category-page.fysik{background-color:#58afc5}.category-page h1{color:#fff;font-weight:100;margin:0 auto;padding:1rem 0;text-align:center}.empty-space{color:#565656;display:block;font-size:1.5rem;font-weight:300;margin:3rem auto}.post h2{margin-top:1.2rem}</style>
+  </head>
+  <body>
+    {% include 'main-header.twig' %}
+    <div class="category-page {{category_slug}}">
+      <h1>{{title}}</h1>
+    </div>
+    <main>
+      {% block content %}
+        {% if no_posts == false %}
+        <div class="articles">
+        
+          {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          {% endfor %}
+        
+        </div>
+        {% else %}
+          <p class="empty-space">Här var det tomt!</p>
+        {% endif %}
+      {% endblock %}
+    </main>
+    {% if no_posts == false %}
+      <div class="pagination">
+      {% if pagination.prev %}
+          <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+      {% endif %}
+      <ul class="pages">
+          {% for page in pagination.pages %}
+              <li>
+                  {% if page.link %}
+                      <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+                  {% else %}
+                      <span class="{{page.class}}">{{page.title}}</span>
+                  {% endif %}
+              </li>
+          {% endfor %}
+      </ul>
+      {% if pagination.next %}
+          <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Nästa</a>
+      {% endif %}
+    {% endif %}
+    </div>
+  </body>
+</html>

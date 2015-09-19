@@ -1,0 +1,18 @@
+{% block content %}
+<div class="post">
+  <div class="header {{post.category_slug}}">
+    <figure>
+      <img src="{{post.thumbnail.src}}" alt="{{post.title}}">
+    </figure>
+  </div>
+  <a href="{{post.category_link}}" class="category {{post.category_slug}}">{{post.terms | first}}</a>
+
+  <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+  <p>{{post.get_preview(25)}}</p>
+  <!--<div class="meta">
+    <span class="author">av {{post.author}}</span>
+    <span class="date">{{post.date}}</span>
+  </div>-->
+  <a href="{{post.link}}" class="read-more">Läs mer…</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% block content %}
+<div class="post">
+  <div class="header {{post.category_slug}}">
+    <!--<figure>-->
+      <img src="{{post.thumbnail.src | resize(600)}}" srcset="{{post.thumbnail.src | resize(600) }} 1x, {{post.thumbnail.src | resize(1200)}} 2x" alt="Bild för {{post.title}}">
+    <!--</figure>-->
+  </div>
+  {%if post.category_name %}
+  <a href="{{post.category_link}}" class="category {{post.category_slug}}">{{post.category_name}}</a>
+  {% endif %}
+  <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+  <p>{{post.get_preview(25)}}</p>
+</div>
+{% endblock %}

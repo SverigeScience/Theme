@@ -1,0 +1,15 @@
+{% extends "archive.twig" %}
+
+{% block content %}
+{% if no_posts == false %}
+<div class="articles">
+
+  {% for post in posts %}
+    {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+  {% endfor %}
+
+</div>
+  {% else %}
+  <p class="empty-space">Här var det tomt!</p>
+{% endif %}
+{% endblock %}
