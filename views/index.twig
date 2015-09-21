@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html {{site.language_attributes}}>
   <head>
-    <!-- {{php_version}} -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="not all" onload="if(media!='all')media='all'">
-
     <link rel="stylesheet" type="text/css" href="{{theme.link}}/static/index.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="not all" onload="if(media!='all')media='all'">
     
     {% include 'html-header.twig' %}
+
+    <link rel="prefetch" href="{{theme.link}}/static/single.css">
+    <!-- {{php_version}} -->
   </head>
   <body>
     {% include 'ie.twig' %}
