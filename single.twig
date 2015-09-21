@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html {{site.language_attributes}}>
+  <head>
+    <link rel="stylesheet" href="{{theme.link}}/static/single.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="not all" onload="if(media!='all')media='all'">
+    
+    {% include 'html-header.twig' %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "publisher": "Sverige Science",
+      "headline": "{{post.title}}",
+      "url": "{{post.link}}",
+      "thumbnailUrl": "{{post.thumbnail.src}}",
+      "creator": {
+        "@type": "Person",
+        "name": "{{post.author.first_name}} {{post.author.last_name}}",
+        "image": "{{author_profile_picture}}",
+        "url": "{{post.author.path}}",
+        "sameAs": "http://jeremy.se"
+      },
+      "headline": "{% if wp_title %}{{wp_title}} - {{site.name}}{% else %}{{site.name}}{% endif %}",
+      "url": "{{post.link}}",
+      "dateCreated": "{{post.date}}",
+      "datePublished": "{{post.date}}",
+      "image": "{{post.thumbnail.src}}",
+      "articleSection": "{{post.category_name}}",
+      "description": "{{post_description}}"
+    }
+    </script>
+  </head>
+  <body>
+    {% include 'ie.twig' %}
+    <div class="site">
+      {% block content %}
+      <header class="main-header fixedsticky">
+        <figure class="logo">
+          <svg viewBox="0 0 275 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(1.000000, -1.000000)" id="Sverige-Science-Background">
+                <g>
+                  <g id="Sverige-Science-Logo" transform="translate(0.000000, 0.902534)">
+                    <g id="Logo">
+                      <path id="March-path" d="M205.769309,33.5727073 C173.974366,15.1417876 115.849164,56.4591387 75.943036,125.857593 C36.0369082,195.256048 29.4614934,266.455824 61.2564363,284.886744 C93.051379,303.317664 151.176582,262.000313 191.082709,192.601858 C230.988837,123.203403 237.564252,52.003627 205.769309,33.5727073 L205.769309,33.5727073 L205.769309,33.5727073 Z" stroke="#18557A" stroke-width="3"></path>
+                      <path d="M62.4607103,20.4415517 C30.1358517,41.7079975 36.8208567,123.861585 77.3920866,203.936725 C117.963316,284.011866 177.057272,331.685732 209.382131,310.419286 C241.706989,289.152841 235.021984,206.999253 194.450755,126.924113 C153.879525,46.8489727 94.785569,-0.82489404 62.4607103,20.4415517 L62.4607103,20.4415517 L62.4607103,20.4415517 Z" id="Venus-path" stroke="#236F9D" stroke-width="3"></path>
+                      <path d="M0.7537136,159.229726 C0.7537136,131.239682 60.510243,104.093159 135.921421,104.093159 C211.332598,104.093159 271.089127,131.239682 271.089127,159.229726 C271.089127,187.21977 211.332598,214.366292 135.921421,214.366292 C60.510243,214.366292 0.7537136,187.21977 0.7537136,159.229726 L0.7537136,159.229726 L0.7537136,159.229726 Z" id="Earth-path" stroke="#368DC2" stroke-width="3"></path>
+                      <circle id="Sun" fill="#FDBC55" cx="134.783423" cy="161.504706" r="40"></circle>
+                      <circle id="Earth" fill="#5AB37F" r="18" cx="255.396985" cy="183.504706"></circle>
+                      <circle id="March" fill="#E95A62" r="9.5" cx="41.1227809" cy="241.591311"></circle>
+                      <circle id="Venus" fill="#58AFC5" r="17" cx="90.844994" cy="17.1924169"></circle>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </figure>
+        <a href="{{site.url}}" class="site-title">Sverige Science</a>
+        <a href="{{category_link}}" class="current-category {{category_slug}}">{{post.category_name}}</a>
+      </header>
+    <main>
+      <article class="{{category_slug}}" id="post-{{post.ID}}">
+        <header>
+          <figure class="article-imagery">
+            <img src="{{post.thumbnail.src|resize(600)}}" srcset="{{post.thumbnail.src | resize(600) }} 1x, {{post.thumbnail.src | resize(1200)}} 2x" alt="Bild för {{post.title}}">
+          </figure>
+          <h1>{{post.title}}</h1>
+        </header>
+
+        <div class="article-body">
+          {{post.content}}
+        </div>
+
+        <div class="like">
+            <span class="facebook">
+                <iframe src="https://www.facebook.com/plugins/like.php?href={{post.link}}&amp;show_faces=false&amp;layout=button_count" style="height:21px;width: 100px;border:0;overflow:hidden"></iframe>
+            </span>
+            <span class="twitter">
+                <a class="twitter-share-button" data-via="SverigeScience" data-hashtags="vetenskap">Twittra</a>
+            </span>
+            <span class="google-plus">
+                <span class="g-plusone" data-size="medium"></span>
+            </span>
+        </div>
+
+        <div class="meta">
+          <!--Skrivet av <a href="{{post.author.path}}">{{post.author.first_name}} {{post.author.last_name}}</a> <span>&bull;</span> {{post.post_date | date}}-->
+          <figure class="author">
+            <img src="{{author_profile_picture}}" alt="{{post.author.first_name}} {{post.author.last_name}}">
+            <figcaption>
+              <a href="{{post.author.path}}">{{post.author.first_name}} {{post.author.last_name}}</a>
+            </figcaption>
+          </figure>
+          <time class="post-date">{{post.post_date | date}}</time>
+        </div>
+      </article>
+      <section class="share">
+        <h3>Dela artikeln</h3>
+        <div class="share-items">
+          <a href="#" class="share-button facebook">
+            <span class="share-icon fa fa-facebook"></span>
+          </a>
+          <a href="#" class="share-button twitter">
+            <span class="share-icon fa fa-twitter"></span>
+          </a>
+          <a href="#" class="share-button reddit">
+            <span class="share-icon fa fa-reddit"></span>
+          </a>
+          <a href="#" class="share-button google-plus">
+            <span class="share-icon fa fa-google-plus"></span>
+          </a>
+        </div>
+      </section>
+      <div class="ad-area">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9675050026743432" data-ad-slot="4625393654" data-ad-format="auto"></ins>
+      </div>
+      <section class="comments">
+        <h3>Kommentera</h3>
+        <div id="disqus_thread"></div>
+      </section>
+    </main>
+    {% endblock %}
+  </div>
+
+  {% include 'footer.twig' %}
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async defer></script>
+
+  <script src="{{site.url}}/wp-includes/js/jquery/jquery.js"></script>
+  <script src="{{theme.link}}/static/fixedsticky.js"></script>
+  <script src="{{theme.link}}/static/single.js"></script>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sverigescience';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  {{function('wp_footer')}}
+</body>
+</html>
