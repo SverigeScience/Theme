@@ -1,10 +1,12 @@
 var teaseImages = document.querySelectorAll('template.tease');
 
 function showImage(tease) {
-  var parent = tease.parentNode;
-  var image = tease.innerHTML;
-  parent.removeChild(tease);
-  parent.innerHTML += image;
+  if (tease) {
+    var parent = tease.parentNode;
+    var image = tease.innerHTML;
+    parent.removeChild(tease);
+    parent.innerHTML += image;
+  }
 }
 
 window.onload = function() {
