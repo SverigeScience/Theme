@@ -2,7 +2,7 @@
 <div class="post">
   <div class="header {{post.category_slug}}">
     <!--<figure>-->
-      <img src="{{post.thumbnail.src | resize(600)}}" srcset="{{post.thumbnail.src | resize(600) }} 1x, {{post.thumbnail.src | resize(1200)}} 2x" alt="Bild för {{post.title}}">
+      <template class="tease"><img src="{{post.thumbnail.src | resize(600)}}" srcset="{{post.thumbnail.src | resize(600) }} 1x, {{post.thumbnail.src | resize(1200)}} 2x" alt="Bild för {{post.title}}"></template>
     <!--</figure>-->
   </div>
   {%if post.category_name %}
