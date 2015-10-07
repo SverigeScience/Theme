@@ -144,6 +144,8 @@ main {
     margin: 1rem;
     justify-content: center;
     align-items: flex-start;
+    max-width: 1659px;
+    margin: 0 auto;
 
     .post {
       //flex: 1 1 auto;
@@ -336,5 +338,3 @@ main {
     min-height: 360px;
   }
 }
-
-@import 'print';
