@@ -290,17 +290,9 @@ section {
 }
 
 @media (max-width: 600px) {
-  .share {
-    transform: scale(.8);
-  }
-  .share.open {
-    transform: translateY(-35px);
-  }
   main {
     max-width: none;
     width: 100%;
     overflow-x: hidden;
   }
 }
-
-@import 'print';
