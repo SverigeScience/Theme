@@ -73,16 +73,10 @@
           {{post.content}}
         </div>
 
-        <div class="like">
-            <span class="facebook">
-                <iframe src="https://www.facebook.com/plugins/like.php?href={{post.link}}&amp;show_faces=false&amp;layout=button_count" style="height:21px;width: 100px;border:0;overflow:hidden"></iframe>
-            </span>
-            <span class="twitter">
-                <a class="twitter-share-button" data-via="SverigeScience" data-hashtags="vetenskap">Twittra</a>
-            </span>
-            <span class="google-plus">
-                <span class="g-plusone" data-size="medium"></span>
-            </span>
+        <div class="tags">
+          {% for term in post.terms('tags') %}
+            <a href="{{term.link}}">{{term.name}}</a>
+          {% endfor %}
         </div>
 
         <div class="meta">
@@ -96,6 +90,20 @@
           <time class="post-date">{{post.post_date | date}}</time>
         </div>
       </article>
+      <section class="like-box">
+        <h3>Gilla artikeln</h3>
+        <div class="like">
+          <span class="facebook">
+            <iframe src="https://www.facebook.com/plugins/like.php?href={{post.link}}&amp;show_faces=false&amp;layout=button_count" style="height:21px;width: 100px;border:0;overflow:hidden"></iframe>
+          </span>
+          <span class="twitter">
+            <a class="twitter-share-button" data-via="SverigeScience" data-hashtags="vetenskap">Twittra</a>
+          </span>
+          <span class="google-plus">
+            <span class="g-plusone" data-size="medium"></span>
+          </span>
+        </div>
+      </section>
       <section class="share">
         <h3>Dela artikeln</h3>
         <div class="share-items">
@@ -133,20 +141,8 @@
   <script src="{{theme.link}}/static/fixedsticky.js"></script>
   <script src="{{theme.link}}/static/single.js"></script>
 
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'sverigescience';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <script type="text/javascript">var disqus_shortname='sverigescience'; (function() {var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;dsq.src='//'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   {{function('wp_footer')}}
 </body>
 </html>

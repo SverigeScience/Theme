@@ -124,19 +124,32 @@ article {
   margin-bottom: 0;
   padding-bottom: 2rem;
 
-  .like {
+  .tags {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: .5rem 2rem;
+    margin: 0rem 2rem 2rem;
 
-    & > span {
-      &.facebook {
+    a {
+      margin: 0 .5rem;
+      padding: .4rem .6rem .4rem 1rem;
+      clip-path: polygon(0% 50%, .6rem 0%, 100% 0%, 100% 100%, .6rem 100%, 0% 50%);
+      background-color: darken($main-background-color, 2);
+      font-size: .8rem;
+      display: block;
+      text-align: center;
+
+      &::before {
+        content: "#";
+      }
+
+      &:first-child {
         margin-left: 0;
       }
-      &.google-plus {
-        margin-left: 1.25rem;
-        transform: translateY(2px);
+
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
@@ -201,6 +214,22 @@ section {
     margin: 0;
     margin-bottom: 1rem;
   }
+
+  .like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > span {
+      transform: translateY(.25rem);
+      &.facebook {
+        margin-left: 0;
+      }
+      &.google-plus {
+        margin-left: 1.25rem;
+      }
+    }
+  }
 }
 
 .share {
@@ -262,7 +291,7 @@ section {
   display: flex;
   font-weight: 300;
   letter-spacing: .02rem;
-  margin: 2rem 2rem -2rem 2rem;
+  margin: 1rem 2rem -2rem 2rem;
   padding: 1rem 0;
   
   .author {
