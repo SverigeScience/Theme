@@ -52,7 +52,7 @@ body {
     right: 0;
     z-index: 999;
   }
-  
+
   .site-title {
     color: $white;
     flex: 1;
@@ -109,7 +109,7 @@ main {
 }
 
 #svg-filter {
-  height: 0; 
+  height: 0;
   position: absolute;
 }
 
@@ -126,12 +126,13 @@ article {
 
   .tags {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: center;
     margin: 0rem 2rem 2rem;
 
     a {
-      margin: 0 .5rem;
+      margin: .5rem;
       padding: .4rem .6rem .4rem 1rem;
       clip-path: polygon(0% 50%, .6rem 0%, 100% 0%, 100% 100%, .6rem 100%, 0% 50%);
       background-color: darken($main-background-color, 2);
@@ -153,7 +154,7 @@ article {
       }
     }
   }
-  
+
   iframe {
     display: block;
     width: 100%;
@@ -173,7 +174,7 @@ article {
     line-height: 1.7rem;
     margin: 1.7rem 0;
     font-family: 'Freight Text Pro', Georgia, serif;
-    
+
     img {
       max-width: 100%;
       display: block;
@@ -293,7 +294,7 @@ section {
   letter-spacing: .02rem;
   margin: 1rem 2rem -2rem 2rem;
   padding: 1rem 0;
-  
+
   .author {
     align-items: center;
     display: flex;
