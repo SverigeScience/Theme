@@ -1,38 +1,38 @@
 @import 'colors';
 
 @mixin category-background-color {
-  &.biologi {
-    background-color: $biologi;
+  &.historia {
+    background-color: $historia;
   }
-  
+
   &.kemi {
     background-color: $kemi;
   }
-  
+
   &.halsa-medicin {
     background-color: $halsa-medicin;
   }
-  
+
   &.teknik {
     background-color: $teknik;
   }
-  
+
   &.miljo {
     background-color: $miljo;
   }
-  
+
   &.rymden {
     background-color: $rymden;
   }
-  
+
   &.djur-natur {
     background-color: $djur-natur;
   }
-  
+
   &.manniskan {
     background-color: $manniskan;
   }
-  
+
   &.arkeologi {
     background-color: $arkeologi;
   }
@@ -47,38 +47,38 @@
 }
 
 @mixin category-border-color {
-  &.biologi {
-    border-color: $biologi;
+  &.historia {
+    border-color: $historia;
   }
-  
+
   &.kemi {
     border-color: $kemi;
   }
-  
+
   &.halsa-medicin {
     border-color: $halsa-medicin;
   }
-  
+
   &.teknik {
     border-color: $teknik;
   }
-  
+
   &.miljo {
     border-color: $miljo;
   }
-  
+
   &.rymden {
     border-color: $rymden;
   }
-  
+
   &.djur-natur {
     border-color: $djur-natur;
   }
-  
+
   &.manniskan {
     border-color: $manniskan;
   }
-  
+
   &.arkeologi {
     border-color: $arkeologi;
   }
@@ -93,38 +93,38 @@
 }
 
 @mixin category-color {
-  &.biologi {
-    color: $biologi;
+  &.historia {
+    color: $historia;
   }
-  
+
   &.kemi {
     color: $kemi;
   }
-  
+
   &.halsa-medicin {
     color: $halsa-medicin;
   }
-  
+
   &.teknik {
     color: $teknik;
   }
-  
+
   &.miljo {
     color: $miljo;
   }
-  
+
   &.rymden {
     color: $rymden;
   }
-  
+
   &.djur-natur {
     color: $djur-natur;
   }
-  
+
   &.manniskan {
     color: $manniskan;
   }
-  
+
   &.arkeologi {
     color: $arkeologi;
   }
