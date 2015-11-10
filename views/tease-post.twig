@@ -1,7 +1,7 @@
 {% block content %}
 <div class="post">
   <div class="header {{post.category_slug}}">
-      <template class="tease"><img src="{{post.thumbnail.src | resize(600)}}" srcset="{{post.thumbnail.src | resize(600) }} 1x, {{post.thumbnail.src | resize(1200)}} 2x" alt="Bild för {{post.title}}"></template>
+      <template class="tease"><img src="{{post.thumbnail.src | resize(382.75)}}" srcset="{{post.thumbnail.src | resize(382.75) }} 1x, {{post.thumbnail.src | resize(765.5)}} 2x" alt="Bild för {{post.title}}"></template>
   </div>
   {%if post.category_name %}
   <a href="{{post.category_link}}" class="category {{post.category_slug}}">{{post.category_name}}</a>
